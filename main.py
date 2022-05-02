@@ -30,9 +30,4 @@ def CookieDictToString(cookies: dict):
     """
     if len(cookies.items()) == 0 or not cookies.items():
         return "🍪"
-
-    combinations = []
-    for k, v in cookies.items():
-        combinations.append(f"{k}={v}")
-
-    return ";".join(combinations) + ";"
+    return ";".join([f"{k}={v}" for k,v in cookies.items()]) + ";"
