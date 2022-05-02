@@ -15,8 +15,7 @@ def StringToCookieDict(cookies_content: str):
     for i in range(len(not_a_cookie)):
         if not_a_cookie[i] == "" or not_a_cookie[i] == " ":
             not_a_cookie.pop(i)
-    for item in not_a_cookie:
-        cookie_items.append(item.split("="))
+    cookie_items = [item.split("=") for item in not_a_cookie]
     for a in cookie_items:
         idk_if_they_are_cookies[a[0]] = a[1]
     return idk_if_they_are_cookies
