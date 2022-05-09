@@ -1,5 +1,5 @@
 
-def StringToCookieDict(cookies_content: str):
+def StringToCookieDict(cookies_content: str) -> dict:
     """
     Returns a new dictionary that contains a special string convertion from the http request header
     Example:
@@ -11,7 +11,7 @@ def StringToCookieDict(cookies_content: str):
     not_a_cookie = cookies_content.split(";")
     cookie_items = []
     if not not_a_cookie:
-        return False
+        return {}
     for i in range(len(not_a_cookie)):
         if not_a_cookie[i] == "" or not_a_cookie[i] == " ":
             not_a_cookie.pop(i)
@@ -21,7 +21,7 @@ def StringToCookieDict(cookies_content: str):
     return idk_if_they_are_cookies
 
 
-def CookieDictToString(cookies: dict):
+def CookieDictToString(cookies: dict) -> str:
     """
     Returns a special string value from a dictionary of cookies
     Example:
