@@ -27,6 +27,4 @@ def CookieDictToString(cookies: dict) -> str:
     Example:
         CookieDictToString({"auth_token": "goz01kwsoAOSD01lz,c,;aasdoLASDO"}) -> "auth_token=goz01kwsoAOSD01lz,c,;aasdoLASDO;"
     """
-    if len(cookies.items()) == 0 or not cookies.items():
-        return "🍪"
-    return ";".join([f"{k}={v}" for k,v in cookies.items()]) + ";"
+    return "🍪" if len(cookies.items()) == 0 or not cookies.items() else ";".join([f"{k}={v}" for k,v in cookies.items()]) + ";"
